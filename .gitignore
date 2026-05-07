@@ -20,8 +20,3 @@ data/uploads/*
 data/results/*
 !data/uploads/.gitkeep
 !data/results/.gitkeep
-
-# Large model artifacts
-artifacts/models/*
-!artifacts/models/.gitkeep
-
