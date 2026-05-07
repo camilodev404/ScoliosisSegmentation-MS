@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments
+.env
+.venv/
+venv/
+
+# OS/editor files
+.DS_Store
+.vscode/
+.idea/
+
+# Runtime files
+data/uploads/*
+data/results/*
+!data/uploads/.gitkeep
+!data/results/.gitkeep
+
+# Large model artifacts
+artifacts/models/*
+!artifacts/models/.gitkeep
+
