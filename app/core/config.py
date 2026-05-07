@@ -8,6 +8,12 @@ class Settings(BaseSettings):
     app_name: str = "ScoliosisSegmentation-MS"
     api_prefix: str = "/api/v1"
     environment: str = "local"
+    cors_origins: list[str] = [
+        "http://127.0.0.1:5173",
+        "http://localhost:5173",
+        "http://127.0.0.1:8080",
+        "http://localhost:8080",
+    ]
 
     project_root: Path = Path(__file__).resolve().parents[2]
     upload_dir: Path | None = None
@@ -17,6 +23,7 @@ class Settings(BaseSettings):
     binary_model_name: str = "binary_spine_thoracolumbar_best.pt"
     multiclass_model_name: str = "thoracolumbar_partial_cascade_explained_best.pt"
     last_visible_model_name: str = "last_visible_estimator_thoracolumbar_best.pt"
+    public_results_path: str = "/results"
 
     model_config = SettingsConfigDict(
         env_file=".env",
@@ -48,4 +55,3 @@ class Settings(BaseSettings):
 @lru_cache
 def get_settings() -> Settings:
     return Settings()
-
